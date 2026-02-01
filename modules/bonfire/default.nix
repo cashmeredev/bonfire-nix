@@ -431,9 +431,9 @@ in {
           (if cfg.mail-backend != null then { MAIL_BACKEND = "${cfg.mail-backend}"; } else {}) //
           (if cfg.mail-port != null then { MAIL_PORT = "${cfg.mail-port}"; } else {}) //
           (if cfg.mail-ssl then { MAIL_SSL = "${lib.trivial.boolToString cfg.mail-ssl}"; } else {}) //
-          (if cfg.zenodo_env then { ZENODO_ENV = "${cfg.zenodo-env}"; } else {}) //
-          (if cfg.orcid-env then { ORCID_ENV = "${cfg.orcid-env}"; } else {}) //
-          (if cfg.orcid-with-member-api then { ORCID_WITH_MEMBER_API = "${cfg.orcid-with-member-api}"; } else {});
+          (if cfg.zenodo-env != null then { ZENODO_ENV = "${cfg.zenodo-env}"; } else {}) //
+          (if cfg.orcid-env != null then { ORCID_ENV = "${cfg.orcid-env}"; } else {}) //
+          (if cfg.orcid-with-member-api != null then { ORCID_WITH_MEMBER_API = "${cfg.orcid-with-member-api}"; } else {});
         };
 
         meilisearch = {
